@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://media.istockphoto.com/id/1550071750/photo/green-tea-tree-leaves-camellia-sinensis-in-organic-farm-sunlight-fresh-young-tender-bud.jpg?s=612x612&w=0&k=20&c=RC_xD5DY5qPH_hpqeOY1g1pM6bJgGJSssWYjVIvvoLw=') no-repeat center center/cover;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+  }
+ 
+
+.clock-container {
+  text-align: center;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+#time {
+  font-size: 5rem;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+#date {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+

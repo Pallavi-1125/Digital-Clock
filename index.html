@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elegant Live Clock</title>
+  
+  <style>
+    @import url("https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmaiArmlw.woff2) format(woff2)");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://images.unsplash.com/39/wdXqHcTwSTmLuKOGz92L_Landscape.jpg?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmF0dXJlJTIwbGFuZHNjYXBlfGVufDB8fDB8fHww') no-repeat center center/cover;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+
+    .clock-container {
+      text-align: center;
+      padding: 40px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    #time {
+      font-size: 5rem;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    #date {
+      font-size: 1.5rem;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock-container">
+    <h1 id="time">00:00:00</h1>
+    <p id="date">Loading date...</p>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+
+      const timeString = `${hours}:${minutes}:${seconds}`;
+      document.getElementById('time').textContent = timeString;
+
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const dateString = now.toLocaleDateString(undefined, options);
+      document.getElementById('date').textContent = dateString;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock(); // Show immediately
+  </script>
+</body>
+</html>
